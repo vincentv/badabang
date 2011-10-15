@@ -1,0 +1,18 @@
+defaults: &defaults
+  host: 127.0.0.1
+  port: 27017
+
+development:
+  <<: *defaults
+  database: badabang_development
+
+test:
+  <<: *defaults
+  database: badabang_test
+
+# set these environment variables on your prod server
+production:
+  host: <host>
+  database: <database>
+  username: <username>
+  password: <password>

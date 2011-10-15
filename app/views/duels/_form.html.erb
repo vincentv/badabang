@@ -1,0 +1,14 @@
+<%= simple_form_for(@duel) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :player_one, :collection => User.all(:order => 'nickname'), :value_method => 'id', :label_method => 'nickname', :required => true %>
+    <%= f.input :player_one_score %>
+    <%= f.input :player_two, :collection => User.all(:order => 'nickname'), :value_method => 'id', :label_method => 'nickname', :required => true %>
+    <%= f.input :player_two_score %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

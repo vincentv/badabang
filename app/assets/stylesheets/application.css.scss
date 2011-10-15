@@ -1,0 +1,67 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ */
+
+@import "normalize";
+@import "bourbon";
+
+@import "config";
+@import "forms";
+@import "table";
+@import "typography";
+
+body {
+  @include background-image(url("/assets/fd.png"));
+}
+
+table {
+  width:90%;
+  margin:auto;
+}
+
+body > header {
+  width:100%;
+  height:32px;
+  margin-bottom:32px;
+  vertical-align:middle;
+
+  @include box($orient: horizontal, $pack:center, $align: stretch);
+
+  h1, .user-box {
+    margin:10.5px 10.5px;
+  }
+
+  #logo {
+    width:160px;
+  }
+
+  h1 {
+    @include box-flex(2);
+    span {
+      display:none;
+    }
+  }
+
+  .user-box, a, a:visited {
+    color : #fff;
+  }
+}
+
+#main {
+  width:760px;
+  min-height:558px;
+  margin:auto;
+  padding:21px;
+
+  @include background-image(url("/assets/pn.png"));
+
+  h1 {
+    text-align:center;
+    border-bottom:4px solid #000;
+  }
+}
+
+@import "users"

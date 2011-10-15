@@ -1,0 +1,24 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#user-infos {
+  @include box($orient: horizontal, $pack:center, $align: stretch);
+}
+
+#duels {
+  @include box-flex(2);
+}
+
+#reward {
+
+  text-align:center;
+
+  p.user-nickname, p.user-reward, img {
+    margin:4px;
+    font:{
+      weight:bolder;
+      size:200%;
+    }
+  }
+}

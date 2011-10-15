@@ -1,0 +1,33 @@
+<h1>Cowboys & Cowgirls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Nickname</th>
+      <th>Reward</th>
+      <th>Won</th>
+      <th>Lost</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td class="photo">
+          <%- unless user.facebook_id.nil? %>
+            <img src="https://graph.facebook.com/	<%= user.facebook_id %>/picture?type=square" style="width:25px" />
+          <%- else %>
+            <%= image_tag "portrait_male.png", :style => "width:25px" %>
+          <%- end %>
+        </td>
+        <td><%= user.nickname %></td>
+        <td><%= user.reward %> $</td>
+        <td><%= user.won %></td>
+        <td><%= user.lost %></td>
+        <td><%= link_to 'Show', user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

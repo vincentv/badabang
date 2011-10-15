@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<b>Player one:</b>
+<%= @duel.player_one_nickname %>
+</p>
+
+<p>
+<b>Score player one:</b>
+<%= @duel.player_one_score %>
+</p>
+
+<p>
+<b>Player two:</b>
+<%= @duel.player_two_nickname %>
+</p>
+
+<p>
+<b>Score player two:</b>
+<%= @duel.player_two_score %>
+</p>
+
+<p>
+<b>Winner:</b>
+<%- if @duel.winner.eql?(@duel.player_one) %>
+  <%= @duel.player_one_nickname %>
+<%- else %>
+  <%= @duel.player_two_nickname %>
+<%- end %>
+</p>
+
+
+<%= link_to 'Edit', edit_duel_path(@duel) %> |
+<%= link_to 'Back', duels_path %>

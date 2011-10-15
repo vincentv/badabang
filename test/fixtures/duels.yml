@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  player_one: MyString
+  score_player_one: 1.5
+  player_two: MyString
+  score_player_two: 1.5
+  winner: MyString
+
+two:
+  player_one: MyString
+  score_player_one: 1.5
+  player_two: MyString
+  score_player_two: 1.5
+  winner: MyString

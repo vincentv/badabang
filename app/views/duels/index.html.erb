@@ -1,0 +1,38 @@
+<h1>Listing duels</h1>
+
+<p><%= link_to 'New Duel', new_duel_path, :class=>"button" %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Player one</th>
+      <th>Score player one</th>
+      <th>Player two</th>
+      <th>Score player two</th>
+      <th>Winner</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @duels.each do |duel| %>
+      <tr>
+        <td><%= duel.player_one_nickname %></td>
+        <td><%= duel.player_one_score %></td>
+        <td><%= duel.player_two_nickname %></td>
+        <td><%= duel.player_two_score %></td>
+        <%- if duel.winner.eql?(duel.player_one) %>
+          <td><%= duel.player_one_nickname %></td>
+        <%- else %>
+          <td><%= duel.player_two_nickname %></td>
+        <%- end %>
+        <td><%= link_to 'Show', duel %></td>
+        <td><%= link_to 'Edit', edit_duel_path(duel) %></td>
+        <td><%= link_to 'Destroy', duel, confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

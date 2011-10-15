@@ -1,0 +1,50 @@
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin:1em;
+
+    th,td,caption { padding:2px; }
+    th { text-align: left; padding: 0 1em .1em 0; font-weight: bold; }
+
+    thead {
+
+        th {
+            font-weight: bold;
+            vertical-align: middle;
+            text-align:center;
+
+            a {
+                border: none;
+                padding-right: 12px
+            }
+
+            &:link:hover, &:visited:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    tbody {
+
+        td a:hover, th a:hover {
+            background-color: transparent;
+        }
+
+        td {
+          text-align:center;
+        }
+
+        td.photo {
+          text-align:right;
+        }
+
+    }
+
+    thead th,tbody td, tbody th {
+        padding: .3em .4em;
+        vertical-align:middle;
+    }
+
+    tfoot { font-style: italic; }
+}

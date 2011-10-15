@@ -1,0 +1,45 @@
+<div id="user-infos">
+  <div id="reward">
+    <p class="user-nickname"><%= @user.nickname %></p>
+    <%- unless @user.facebook_id.nil? %>
+      <img src="https://graph.facebook.com/	<%= @user.facebook_id %>/picture?type=normal" />
+    <%- else %>
+      <%= image_tag "portrait_male.png" %>
+    <%- end %>
+    <p class="user-reward"><%= @user.reward %> $</p>
+
+    <br />
+    <%= link_to 'Back', users_path %>
+  </div>
+
+  <div id="duels">
+    <table>
+      <thead>
+        <tr>
+          <th>Player one</th>
+          <th>Score player one</th>
+          <th>Player two</th>
+          <th>Score player two</th>
+          <th>Winner</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @duels.each do |duel| %>
+          <tr class="<%- if duel.winner.eql?(@user.id.to_s) %>success<%- else %>error<%- end %>">
+            <td><%= duel.player_one_nickname %></td>
+            <td><%= duel.player_one_score %></td>
+            <td><%= duel.player_two_nickname %></td>
+            <td><%= duel.player_two_score %></td>
+            <%- if duel.winner.eql?(duel.player_one) %>
+              <td><%= duel.player_one_nickname %></td>
+            <%- else %>
+              <td><%= duel.player_two_nickname %></td>
+            <%- end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
